@@ -1,15 +1,14 @@
 'use strict';
 
 const findBestEmployee = function (employees) {
-  const values = Object.values(employees);
-  // console.log(values);
-  let task = 0;
-  for (let value of values) {
-    if (value > task) {
-      task = value;
+  for (let key in employees) {
+    let task = 0;
+    if (employees[key] > task) {
+      task = employees[key];
+      console.log(task);
     }
   }
-  return task;
+  // return task;
 };
 
 console.log(
@@ -21,19 +20,19 @@ console.log(
   }),
 ); // lorence
 
-console.log(
-  findBestEmployee({
-    poly: 12,
-    mango: 17,
-    ajax: 4,
-  }),
-); // mango
+// console.log(
+//   findBestEmployee({
+//     poly: 12,
+//     mango: 17,
+//     ajax: 4,
+//   }),
+// ); // mango
 
-console.log(
-  findBestEmployee({
-    lux: 147,
-    david: 21,
-    kiwi: 19,
-    chelsy: 38,
-  }),
-); // lux
+// console.log(
+//   findBestEmployee({
+//     lux: 147,
+//     david: 21,
+//     kiwi: 19,
+//     chelsy: 38,
+//   }),
+// ); // lux

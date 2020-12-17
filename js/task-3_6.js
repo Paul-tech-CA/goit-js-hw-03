@@ -8,26 +8,13 @@ const products = [
 ];
 
 const calculateTotalPrice = function (allProdcuts, productName) {
-  let totalPrice;
-  for (const item of allProdcuts) {
-    if (item !== productName) {
-      const values = Object.values(item);
-      console.log(values);
-
-      // totalPrice = allProdcuts.price * allProdcuts.quantity;
-      // console.log(totalPrice);
+  let totalPrice = 0;
+  for (let i = 0; i < allProdcuts.length; i++)
+    if (allProdcuts[i].name === productName) {
+      totalPrice = allProdcuts[i].price * allProdcuts[i].quantity;
     }
 
-    // console.log(item);
-  }
-
-  //
-  //
-  // {
-  //
-  // }
-
-  // return totalPrice;
+  return totalPrice;
 };
 
 console.log(calculateTotalPrice(products, 'Радар')); // 5200
