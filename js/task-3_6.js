@@ -9,13 +9,21 @@ const products = [
 
 const calculateTotalPrice = function (allProdcuts, productName) {
   let totalPrice = 0;
-  for (let i = 0; i < allProdcuts.length; i++)
-    if (allProdcuts[i].name === productName) {
-      totalPrice = allProdcuts[i].price * allProdcuts[i].quantity;
-    }
-
+  for (const each of allProdcuts) {
+    if (each.name === productName) totalPrice = each.price * each.quantity;
+  }
   return totalPrice;
 };
+
+// const calculateTotalPrice = function (allProdcuts, productName) {
+//   let totalPrice = 0;
+//   for (let i = 0; i < allProdcuts.length; i++)
+//     if (allProdcuts[i].name === productName) {
+//       totalPrice = allProdcuts[i].price * allProdcuts[i].quantity;
+//     }
+
+//   return totalPrice;
+// };
 
 console.log(calculateTotalPrice(products, 'Радар')); // 5200
 

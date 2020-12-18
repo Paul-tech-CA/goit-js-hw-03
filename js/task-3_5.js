@@ -10,7 +10,7 @@ const products = [
 const getAllPropValues = function (arr, prop) {
   const unknown = [];
   for (const friend of arr) {
-    unknown.push(arr.prop);
+    unknown.push(friend[prop]);
   }
   return unknown;
 };
