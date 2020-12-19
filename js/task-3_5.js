@@ -9,9 +9,7 @@ const products = [
 
 const getAllPropValues = function (arr, prop) {
   const unknown = [];
-  for (const friend of arr) {
-    unknown.push(friend[prop]);
-  }
+  for (const friend of arr) if (friend[prop]) unknown.push(friend[prop]);
   return unknown;
 };
 
@@ -43,3 +41,12 @@ console.log(getAllPropValues(products, 'category')); // []
 // console.log(getAllPropValues(products, 'quantity')); // [4, 3, 7, 2]
 
 // console.log(getAllPropValues(products, 'category')); // []
+
+// 5) console.log(getAllPropValues(products, 'category')); // []
+
+// получаешь
+// [undefined, undefined, undefined, undefined]
+
+// Тебе нужно делать проверку прежде чем пушить
+// friend[prop] ?unknown.push(friend[prop])
+// : ""

@@ -1,12 +1,14 @@
 'use strict';
 
 const countTotalSalary = function (employees) {
-  const values = Object.values(employees);
-  let totalSalay = 0;
-  for (const value of values) {
-    totalSalay += value;
-  }
-  return totalSalay;
+  let totalSalary = 0;
+  for (let key in employees) totalSalary += employees[key];
+  return totalSalary;
+  // const values = Object.values(employees);
+
+  // for (const value of values) {
+  //   totalSalary += value;
+  // }
 };
 
 console.log(countTotalSalary({})); // 0

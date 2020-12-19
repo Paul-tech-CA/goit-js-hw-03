@@ -7,19 +7,19 @@ const products = [
   { name: 'Захват', price: 1200, quantity: 2 },
 ];
 
-const calculateTotalPrice = function (allProdcuts, productName) {
+const calculateTotalPrice = function (allProducts, productName) {
   let totalPrice = 0;
-  for (const each of allProdcuts) {
+  for (const each of allProducts) {
     if (each.name === productName) totalPrice = each.price * each.quantity;
   }
   return totalPrice;
 };
 
-// const calculateTotalPrice = function (allProdcuts, productName) {
+// const calculateTotalPrice = function (allProducts, productName) {
 //   let totalPrice = 0;
-//   for (let i = 0; i < allProdcuts.length; i++)
-//     if (allProdcuts[i].name === productName) {
-//       totalPrice = allProdcuts[i].price * allProdcuts[i].quantity;
+//   for (let i = 0; i < allProducts.length; i++)
+//     if (allProducts[i].name === productName) {
+//       totalPrice = allProducts[i].price * allProducts[i].quantity;
 //     }
 
 //   return totalPrice;
