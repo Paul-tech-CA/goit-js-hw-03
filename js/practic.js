@@ -141,3 +141,88 @@
 // console.log(exSell(100, euroSell));
 
 // const randomArr =
+
+// const repeat = function (str, n) {
+//   let result = '';
+//   for (let i = 1; i <= n; i++) {
+//     result += str;
+//   }
+//   return result;
+// };
+// console.log(repeat('fd', 2));
+
+// const rgb = (a = 0, b = 0, c = 0) => {
+//   let string = '';
+//   string = `${a},${b},${c}`;
+//   return string;
+// };
+
+// console.log(rgb(100, 134));
+// которая будет находить среднее значение по всем своим аргументам
+// const avg = (a, b) => {
+//   let middle = 0;
+//   for (let i = 0; i < avg.length; i++) {
+//     console.log(a++);
+//     // middle = middle + i;
+//   }
+//   return middle / avg.length;
+// };
+// // console.log(avg(4, 5));
+// avg(4, 5);
+
+// const account = {
+//   owner: 'Mango',
+//   balance: 24000,
+//   discount: 0.1,
+//   orders: ['order-1', 'order-2', 'order-3'],
+//   changeDiscount(value) {
+//     this.discount = value;
+//   },
+//   showOrders() {
+//     return this.orders;
+//   },
+//   addOrder(cost, order) {
+//     this.balance -= cost;
+//     this.orders.push(order);
+//   },
+// };
+
+// account.changeDiscount(0.15);
+// console.log(account.discount); // 0.15
+
+// console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3']
+
+// account.addOrder(5000, 'order-4');
+// console.log(account.balance); // 19000
+// console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3', 'order-4']
+
+const inventory = {
+  items: ['Knife', 'Gas mask'],
+  add(itemName) {
+    console.log(`Adding ${itemName} to inventory`);
+
+    inventory.items.push(itemName);
+  },
+  remove(itemName) {
+    console.log(`Removing ${itemName} from inventory`);
+
+    inventory.items = inventory.items.filter(item => item !== itemName);
+  },
+};
+
+const invokeInventoryAction = function (itemName, action) {
+  console.log(`Invoking action on ${itemName}`);
+  action(itemName);
+};
+
+invokeInventoryAction('Medkit', inventory.add);
+// Invoking action on Medkit
+// Adding Medkit to inventory
+
+console.log(inventory.items); // ['Knife', 'Gas mask', 'Medkit']
+
+invokeInventoryAction('Gas mask', inventory.remove);
+// Invoking action on Gas mask
+// Removing Gas mask from inventory
+
+console.log(inventory.items); // ['Knife', 'Medkit']
